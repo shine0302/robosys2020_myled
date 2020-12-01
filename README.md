@@ -11,7 +11,7 @@
 	①sudo insmod myled.ko
 	②sudo chmod 666 /dev/myled 
 	③echo () > /dev/myled0      ()内には下記の番号 
-		1．両方消灯(0)
-		2．両方点灯(1)
- 		3．パトカーランプ風点滅20回(2)
+		*両方消灯(0)
+		*両方点灯(1)
+ 		*パトカーランプ風点滅20回(2)
 	④sudo rmmod myled
