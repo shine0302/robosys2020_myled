@@ -1,5 +1,6 @@
 # robosys2020_myled
 ####  2つのLEDの点灯・消灯を行う
+GPIOピン25と26にon/offを書き込んだ
 
 #### 環境
 	Raspberry Pi 3 Model B+ 
