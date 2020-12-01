@@ -5,4 +5,4 @@
 2．両方点灯
 3．パトカーランプ風点滅20回
 
-環境：Raspberry Pi 3 Model B+  , Linux(WSL) version4.4.0-18362-Microsoft
+環境：Raspberry Pi 3 Model B+  , Linux(WSL) version4.4.0-18362-Microsoft , ubuntu20.04.1 LTS
