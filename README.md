@@ -18,4 +18,4 @@ GPIOピン25と26にon/offを書き込んだ
 	④sudo rmmod myled
 	
 #### 動画
-	https://youtu.be/ipxhmb4CVeg
+　https://youtu.be/ipxhmb4CVeg
