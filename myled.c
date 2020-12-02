@@ -6,7 +6,7 @@
 #include <linux/io.h>
 #include <linux/delay.h>
 
-MODULE_AUTHOR("Shinya Ishihara,Ryuichi Ueda");
+MODULE_AUTHOR("Shinya Ishihara and Ryuichi Ueda");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
 MODULE_VERSION("0.0.1");                       //MODULE
@@ -23,28 +23,75 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
  	if(copy_from_user(&c,buf,sizeof(char)))
   		return -EFAULT;
 
-	if (c == '0')
+	if (c == '0') //全消灯
 		while(1){
+		gpio_base[10] = 1 << 24;
 		gpio_base[10] = 1 << 25;
 		gpio_base[10] = 1 << 26;
+		gpio_base[10] = 1 << 27;	
+		break;	
+	       	}
+
+	else if (c == '1') //上
+		while(1){
+		gpio_base[10] = 1<< 24;
+		gpio_base[7] = 1 << 25;
+		gpio_base[7] = 1 << 26;
+		gpio_base[7] = 1 << 27;
 		break;
 		}
 
-	else if(c == '1')
+	else if(c == '2') //右
 		while(1){
-		gpio_base[7] = 1 << 25;
+		gpio_base[10] =1<< 25;
+		gpio_base[7] = 1<< 26;
+		gpio_base[7] = 1<< 27;
+		gpio_base[7] = 1<< 24;
+		break;
+		}
+
+	else if(c == '3')//下
+		while(1){
+		gpio_base[10] = 1<< 26;
+		gpio_base[7] = 1<< 27;
+		gpio_base[7] = 1<< 24;
+		gpio_base[7] = 1<< 25;
+		break;
+		}
+
+	else if(c == '4')//左
+		while(1){
+		gpio_base[10] = 1<< 27;
+		gpio_base[7] = 1<< 24;
+		gpio_base[7] = 1<< 25;
 		gpio_base[7] = 1<< 26;
 		break;
 		}
 
-    	else if(c == '2')
+    	else if(c == '5')
 		for(i=1; i<=20; i++){
-		gpio_base[10] = 1<<25;
-		gpio_base[7] = 1<<26;
+		gpio_base[7]  =1<<24;
+		gpio_base[10] =1<<25;
+		gpio_base[10] =1<<26;
+		gpio_base[10] =1<<27;
 		mdelay(200);
 		gpio_base[7] = 1<<25;
-		gpio_base[10] = 1<<26;
+		gpio_base[10] =1<<26;
+		gpio_base[10] =1<<27;
+		gpio_base[10] =1<<24;
 		mdelay(200);
+		gpio_base[7] =1<<26;
+		gpio_base[10] =1<<27;
+		gpio_base[10] =1<<24;
+		gpio_base[10] =1<<25;
+		mdelay(200);
+		gpio_base[7] =1<<27;
+		gpio_base[10] =1<<24;
+		gpio_base[10] =1<<25;
+		gpio_base[10] =1<<26;
+		mdelay(200);
+		gpio_base[10] =1<<27;
+		mdelay(0);
 		}
  	return 1; 
 
@@ -86,18 +133,29 @@ static int __init init_mod(void) //カーネルモジュールの初期化
 
 	gpio_base = ioremap_nocache(0x3f200000, 0xA0); //Pi4の場合は0xfe200000
 
-	const u32 led = 25;
-	const u32 led_b =26;
-	const u32 index = led/10;//GPFSE
-	const u32 index_b =led_b/10;
-	const u32 shift = (led%10)*3;//15bit
-	const u32 shift_b = (led_b%10)*3;
-	const u32 mask = ~(0x7 << shift);//11111111111111000111111111111111
-	const u32 mask_b = ~(0x7 << shift_b);
-	gpio_base[index] = (gpio_base[index] & mask) | (0x1 << shift);//001: output flag
+	const u32 led_a = 24;
+	const u32 index_a = led_a/10;//GPFSE
+	const u32 shift_a = (led_a%10)*3;//15bit
+	const u32 mask_a = ~(0x7 << shift_a);//11111111111111000111111111111111
+	gpio_base[index_a] = (gpio_base[index_a] & mask_a) | (0x1 << shift_a);//001: output flag
 						    //111111111111110011111111111111
+	const u32 led_b =25;
+	const u32 index_b =led_b/10;
+	const u32 shift_b = (led_b%10)*3;
+	const u32 mask_b = ~(0x7 << shift_b);
 	gpio_base[index_b] = (gpio_base[index_b] & mask_b) | (0x1 << shift_b);
 
+	const u32 led_c =26;
+	const u32 index_c =led_c/10;
+	const u32 shift_c = (led_c%10)*3;
+	const u32 mask_c = ~(0x7 << shift_c);
+	gpio_base[index_c] = (gpio_base[index_c] & mask_c) | (0x1 << shift_c);                                  
+
+	const u32 led_d =27;
+	const u32 index_d =led_d/10;
+	const u32 shift_d = (led_d%10)*3;
+	const u32 mask_d = ~(0x7 << shift_d); 	
+	gpio_base[index_d] = (gpio_base[index_d] & mask_d) | (0x1 << shift_d);
 	return 0;
 }
 
