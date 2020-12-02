@@ -24,4 +24,5 @@
 	④sudo rmmod myled
 	
 #### 動画
-https://youtu.be/Q6ngi2x8QxA　※音はないです
+https://youtu.be/Q6ngi2x8QxA　
+※音はないです
