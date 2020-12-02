@@ -16,3 +16,6 @@ GPIOピン25と26にon/offを書き込んだ
 		*両方点灯(1)
  		*パトカーランプ風点滅20回(2)
 	④sudo rmmod myled
+	
+#### 動画
+	https://youtu.be/ipxhmb4CVeg
