@@ -9,17 +9,17 @@
 MODULE_AUTHOR("Shinya Ishihara and Ryuichi Ueda");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
-MODULE_VERSION("0.0.1");                       //MODULE
+MODULE_VERSION("0.0.1");                     
 
 static dev_t dev;
 static struct cdev cdv;
 static struct class *cls = NULL;
-static volatile u32 *gpio_base = NULL;  //グローバル変数
+static volatile u32 *gpio_base = NULL;  
 int i=0;
 
 static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_t* pos)
 {
-	char c;   //読み込んだ字を入れる変数
+	char c;   
  	if(copy_from_user(&c,buf,sizeof(char)))
   		return -EFAULT;
 
@@ -104,8 +104,7 @@ static struct file_operations led_fops = {
 };
 
 
-static int __init init_mod(void) //カーネルモジュールの初期化
-{
+static int __init init_mod(void) 
  	int retval;
 	    retval =  alloc_chrdev_region(&dev, 0, 1, "myled");
 	    if(retval < 0){
@@ -131,14 +130,14 @@ static int __init init_mod(void) //カーネルモジュールの初期化
 
 	device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
 
-	gpio_base = ioremap_nocache(0x3f200000, 0xA0); //Pi4の場合は0xfe200000
+	gpio_base = ioremap_nocache(0x3f200000, 0xA0); 
 
 	const u32 led_a = 24;
 	const u32 index_a = led_a/10;//GPFSE
-	const u32 shift_a = (led_a%10)*3;//15bit
-	const u32 mask_a = ~(0x7 << shift_a);//11111111111111000111111111111111
-	gpio_base[index_a] = (gpio_base[index_a] & mask_a) | (0x1 << shift_a);//001: output flag
-						    //111111111111110011111111111111
+	const u32 shift_a = (led_a%10)*3;
+	const u32 mask_a = ~(0x7 << shift_a);
+	gpio_base[index_a] = (gpio_base[index_a] & mask_a) | (0x1 << shift_a);
+						   
 	const u32 led_b =25;
 	const u32 index_b =led_b/10;
 	const u32 shift_b = (led_b%10)*3;
@@ -159,15 +158,15 @@ static int __init init_mod(void) //カーネルモジュールの初期化
 	return 0;
 }
 
-static void __exit cleanup_mod(void) //後始末
+static void __exit cleanup_mod(void) 
 {
 	cdev_del(&cdv);
 	device_destroy(cls, dev);
-	class_destroy(cls);  //追加
+	class_destroy(cls);  
 	unregister_chrdev_region(dev, 1);	
 	printk(KERN_INFO "%s is unloaded. major:%d\n",__FILE__,MAJOR(dev));
 }
 
 
-module_init(init_mod);     // マクロで関数を登録
-module_exit(cleanup_mod);  // 同上
+module_init(init_mod);     
+module_exit(cleanup_mod);  
