@@ -13,16 +13,17 @@
 
 
 #### 操作手順
-	①sudo insmod myled.ko
-	②sudo chmod 666 /dev/myled 
-	③echo () > /dev/myled0      ()内には下記の番号 
+	
+	①sudo insmod myled.ko　　　　 デバイスドライバのインストール
+	②sudo chmod 666 /dev/myled 　 権限の付与
+	③echo () > /dev/myled0      　実行　※()内には下記の番号 
 		*全消灯(0)
 		*↑(1)
  		*→(2)
 		*↓(3)
 		*←(4)
-		*順番に２０回点灯
-	④sudo rmmod myled
+		*順番に２０回点灯	
+	④sudo rmmod myled　　　　　　　デバイスドライバのアンインストール		
 	
 #### 動画
 https://youtu.be/Q6ngi2x8QxA
