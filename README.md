@@ -26,7 +26,8 @@ GPIOピン24～27をこちらのサイトを参考にしながら下の写真の
 LEDは足の長いほうをプラス極に接続してください。
 (http://igarashi-systems.com/sample/translation/raspberry-pi/usage/gpio.html)
 
-![IMG_5458](https://user-images.githubusercontent.com/51872484/101022761-2c172880-35b5-11eb-8aae-f2af947cbe37.JPG)	
+![IMG_5458](https://user-images.githubusercontent.com/51872484/101022761-2c172880-35b5-11eb-8aae-f2af947cbe37.JPG)
+色で囲ってある部分が1セット
 ![IMG_E5460](https://user-images.githubusercontent.com/51872484/101022285-84015f80-35b4-11eb-96cb-4022c85392d2.JPG)
 		
 		
