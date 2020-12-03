@@ -23,7 +23,7 @@
 		
 #### 接続
 GPIOピン24～27をこちらのサイトを参考にしながら下の写真の様に接続します。
-LEDは足の長いほうをプラス極に接続してください。マイナス極側はGrandと接続します。
+LEDは足の長いほうをプラス極に接続してください。マイナス極側はGrndと接続します。
 (http://igarashi-systems.com/sample/translation/raspberry-pi/usage/gpio.html)
 
 ![IMG_5458](https://user-images.githubusercontent.com/51872484/101022761-2c172880-35b5-11eb-8aae-f2af947cbe37.JPG)
