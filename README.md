@@ -9,15 +9,15 @@
 
 
 #### 環境
-	:Linux(WSL) version4.4.0-
-	:ubuntu20.04.1 LTS
+	+Linux(WSL) version4.4.0-
+	+ubuntu20.04.1 LTS
 -----------------------
 	
 #### 使用機材
-	:Raspberry Pi 3 Model B+ 
-	:ELECOM 有線LANアダプタ/USB2.0/Type-A/USBハブ付/ブラック #EDC-FUA2H-B
-	:LANケーブル
-	:ELEGOO Electronics Fun Kit
+	+Raspberry Pi 3 Model B+ 
+	+ELECOM 有線LANアダプタ/USB2.0/Type-A/USBハブ付/ブラック #EDC-FUA2H-B
+	+LANケーブル
+	+ELEGOO Electronics Fun Kit
 		+Resistor 220Ω ×4
 		+LED ×4
 		+Breadboard ×1
