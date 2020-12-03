@@ -26,9 +26,9 @@
 ------------------------
 		
 #### 接続
-GPIOピン24～27を[こちら](http://igarashi-systems.com/sample/translation/raspberry-pi/usage/gpio.html)のサイトを参考にしながら下の写真の様に接続します。
+GPIOピン24～27を[こちら](https://www.raspberrypi.org/documentation/usage/gpio/README.md)のサイトを参考にしながら下の写真の様に接続します。
 LEDは足の長いほうをプラス極に接続してください。マイナス極側はGroundと接続します。  
->http://igarashi-systems.com/sample/translation/raspberry-pi/usage/gpio.html  
+>https://www.raspberrypi.org/documentation/usage/gpio/README.md  
 
 ![IMG_5458](https://user-images.githubusercontent.com/51872484/101022761-2c172880-35b5-11eb-8aae-f2af947cbe37.JPG)  
 色で囲ってある部分が1セット  
