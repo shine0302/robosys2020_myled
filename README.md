@@ -18,22 +18,27 @@
 		:LED ×4
 		:Breadboard ×1
 		:F-M Dupont Wire ×8
+		
+	
 	
 
 
 #### 操作手順
+	1.>git clone https://github.com/shine0302/robosys2020_myled.git //このリポジトリを取得
+	2.>cd robosys20202_myled 　　　//ディレクトリに入る
+	3.>make 　　　　　　　　　　　//プログラムのコンパイル
+	2.>sudo insmod myled.ko　　　　 //デバイスドライバのインストール
+	3.>sudo chmod 666 /dev/myled 　　//権限の付与
+	4.>echo () > /dev/myled0      //実行　※()内には下記の番号 
 	
-	1.>git clone
-	2.>sudo insmod myled.ko　　　　 デバイスドライバのインストール
-	3.>sudo chmod 666 /dev/myled 　 権限の付与
-	4.>echo () > /dev/myled0      　実行　※()内には下記の番号 
 		*全消灯(0)
 		*↑(1)
  		*→(2)
 		*↓(3)
 		*←(4)
 		*順番に２０回点灯	
-	5.>sudo rmmod myled　　　　　　　デバイスドライバのアンインストール		
+		
+	5.>sudo rmmod myled　　　　　　　//デバイスドライバのアンインストール		
 	
 #### 動画
 https://youtu.be/Q6ngi2x8QxA
