@@ -21,7 +21,7 @@
 		
 		
 		
-		![IMG_E5460](https://user-images.githubusercontent.com/51872484/101022285-84015f80-35b4-11eb-96cb-4022c85392d2.JPG)
+		https://user-images.githubusercontent.com/51872484/101022285-84015f80-35b4-11eb-96cb-4022c85392d2.JPG
 		 このように接続してください(回路図なくてすみません）
 	
 	
