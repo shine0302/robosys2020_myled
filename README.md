@@ -18,10 +18,10 @@
 	:ELECOM 有線LANアダプタ/USB2.0/Type-A/USBハブ付/ブラック #EDC-FUA2H-B
 	:LANケーブル
 	:ELEGOO Electronics Fun Kit
-		:Resistor 220Ω ×4
-		:LED ×4
-		:Breadboard ×1
-		:F-M Dupont Wire ×8
+		+Resistor 220Ω ×4
+		+LED ×4
+		+Breadboard ×1
+		+F-M Dupont Wire ×8
 		
 ------------------------
 		
