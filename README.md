@@ -6,24 +6,34 @@
 	
 
 #### 環境
-	Raspberry Pi 3 Model B+ 
-	Linux(WSL) version4.4.0-
-	ubuntu20.04.1 LTS
+	:Linux(WSL) version4.4.0-
+	:ubuntu20.04.1 LTS
+	
+#### 使用機材
+	:Raspberry Pi 3 Model B+ 
+	:ELECOM 有線LANアダプタ/USB2.0/Type-A/USBハブ付/ブラック #EDC-FUA2H-B
+	:LANケーブル
+	:ELEGOO Electronics Fun Kit
+		:Resistor 220Ω ×4
+		:LED ×4
+		:Breadboard ×1
+		:F-M Dupont Wire ×8
 	
 
 
 #### 操作手順
 	
-	①sudo insmod myled.ko　　　　 デバイスドライバのインストール
-	②sudo chmod 666 /dev/myled 　 権限の付与
-	③echo () > /dev/myled0      　実行　※()内には下記の番号 
+	1.>git clone
+	2.>sudo insmod myled.ko　　　　 デバイスドライバのインストール
+	3.>sudo chmod 666 /dev/myled 　 権限の付与
+	4.>echo () > /dev/myled0      　実行　※()内には下記の番号 
 		*全消灯(0)
 		*↑(1)
  		*→(2)
 		*↓(3)
 		*←(4)
 		*順番に２０回点灯	
-	④sudo rmmod myled　　　　　　　デバイスドライバのアンインストール		
+	5.>sudo rmmod myled　　　　　　　デバイスドライバのアンインストール		
 	
 #### 動画
 https://youtu.be/Q6ngi2x8QxA
