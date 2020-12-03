@@ -1,8 +1,8 @@
 # 2020年ロボットシステム学課題１　
 ####   4つのLEDを操作するデバイスドライバを作成
 #### 内容
-	LED４つを上から時計回りにGPIOピン24,25,26,27と接続。それぞれにon/offを書き込み視力検査みたいなものを４パターン再現。
-	また４つのLEDを順番に２０回点灯させた。
+	LED４つを上から時計回りにGPIOピン24,25,26,27と接続。それぞれにon/offを書き込み視力検査みたいなものを４パターン再現しました。
+	また４つのLEDを順番に２０回点灯させました。
 	
 
 #### 環境
@@ -19,7 +19,14 @@
 		:Breadboard ×1
 		:F-M Dupont Wire ×8
 		
+
 		
+#### 接続
+GPIOピン24～27をこちらのサイトを参考にしながら下の写真の様に接続します。
+LEDは足の長いほうをプラス極に接続してください。
+(http://igarashi-systems.com/sample/translation/raspberry-pi/usage/gpio.html)
+
+![IMG_5458](https://user-images.githubusercontent.com/51872484/101022761-2c172880-35b5-11eb-8aae-f2af947cbe37.JPG)	
 ![IMG_E5460](https://user-images.githubusercontent.com/51872484/101022285-84015f80-35b4-11eb-96cb-4022c85392d2.JPG)
 		
 		
@@ -44,4 +51,4 @@
 	
 #### 動画
 https://youtu.be/Q6ngi2x8QxA
-※音はないです
+※音はないです。
