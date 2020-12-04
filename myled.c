@@ -133,28 +133,30 @@ static int __init init_mod(void){
 	gpio_base = ioremap_nocache(0x3f200000, 0xA0); 
 
 	const u32 led_a = 24;
-	const u32 index_a = led_a/10;//GPFSE
-	const u32 shift_a = (led_a%10)*3;
-	const u32 mask_a = ~(0x7 << shift_a);
-	gpio_base[index_a] = (gpio_base[index_a] & mask_a) | (0x1 << shift_a);
-						   
 	const u32 led_b =25;
-	const u32 index_b =led_b/10;
-	const u32 shift_b = (led_b%10)*3;
-	const u32 mask_b = ~(0x7 << shift_b);
-	gpio_base[index_b] = (gpio_base[index_b] & mask_b) | (0x1 << shift_b);
-
 	const u32 led_c =26;
-	const u32 index_c =led_c/10;
-	const u32 shift_c = (led_c%10)*3;
-	const u32 mask_c = ~(0x7 << shift_c);
-	gpio_base[index_c] = (gpio_base[index_c] & mask_c) | (0x1 << shift_c);                                  
-
 	const u32 led_d =27;
+	
+	const u32 index_a = led_a/10;//GPFSE
+	const u32 index_b =led_b/10;
+	const u32 index_c =led_c/10;
 	const u32 index_d =led_d/10;
+	
+	const u32 shift_a = (led_a%10)*3;
+	const u32 shift_b = (led_b%10)*3;
+	const u32 shift_c = (led_c%10)*3;
 	const u32 shift_d = (led_d%10)*3;
-	const u32 mask_d = ~(0x7 << shift_d); 	
+	
+	const u32 mask_a = ~(0x7 << shift_a);
+	const u32 mask_b = ~(0x7 << shift_b);
+	const u32 mask_c = ~(0x7 << shift_c);
+	const u32 mask_d = ~(0x7 << shift_d); 
+	
+	gpio_base[index_a] = (gpio_base[index_a] & mask_a) | (0x1 << shift_a);
+	gpio_base[index_b] = (gpio_base[index_b] & mask_b) | (0x1 << shift_b);
+	gpio_base[index_c] = (gpio_base[index_c] & mask_c) | (0x1 << shift_c);                                  
 	gpio_base[index_d] = (gpio_base[index_d] & mask_d) | (0x1 << shift_d);
+	
 	return 0;
 }
 
