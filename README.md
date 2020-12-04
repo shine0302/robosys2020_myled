@@ -42,7 +42,7 @@ LEDは足の長いほうをプラス極に接続してください。マイナ�
 	2.>cd robosys2020_myled 　　　//ディレクトリに入る
 	3.>make 　　　　　　　　　　　//プログラムのコンパイル
 	4.>sudo insmod myled.ko　　　　 //デバイスドライバのインストール
-	5.>sudo chmod 666 /dev/myled 　　//権限の付与
+	5.>sudo chmod 666 /dev/myled0 　　//権限の付与
 	6.>echo () > /dev/myled0      //実行　※()内には下記の番号 
 	
 		*全消灯(0)
